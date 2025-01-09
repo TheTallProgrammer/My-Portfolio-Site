@@ -4,10 +4,6 @@
 
 ---
 
-Here’s the updated **Tech Stack** section with a new bullet for GitKraken:
-
----
-
 ## 🛠️ Tech Stack
 
 This project harnesses a range of modern tools and technologies:
