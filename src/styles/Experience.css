@@ -1,0 +1,45 @@
+#work-experience-title {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    user-select: none;
+    color: #e0e0e0;
+    transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                text-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  #work-experience-title:hover {
+    color: #fff;
+    text-shadow: 
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 40px #fff,
+      0 0 80px #fff,
+      0 0 120px #fff,
+      0 0 160px #fff;
+  }
+
+  #sub-work-title {
+    user-select: none;
+  }
+
+  /* src/styles/Experience.css */
+
+/* Icon Container */
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Ensures it takes full width of the parent */
+    height: 100%; /* Ensures it takes full height of the parent */
+  }
+  
+  /* Icon Image */
+  .icon-image {
+    max-width: 80%;
+    max-height: 80%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+  

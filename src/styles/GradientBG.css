@@ -1,0 +1,163 @@
+html, body {
+    background-color: #0e0e0e; /* Dark background to set the night mood */
+}
+
+:root {
+    /* Dark and night-inspired color palette */
+    --color-bg1: #0e0e0e; /* Deep Black */
+    --color-bg2: #1a1a2e; /* Dark Navy Blue for gradient */
+    
+    /* Night shade colors */
+    --color1: 70, 130, 180; /* Steel Blue */
+    --color2: 72, 61, 139; /* Dark Slate Blue */
+    --color3: 106, 90, 205; /* Slate Blue */
+    --color4: 123, 104, 238; /* Medium Slate Blue */
+    --color5: 65, 105, 225; /* Royal Blue */
+    --color-interactive: 25, 25, 112; /* Midnight Blue */
+    
+    --circle-size: 80%;
+    --blending: multiply; /* Blend mode suitable for dark themes */
+}
+
+@keyframes moveInCircle {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes moveVertical {
+    0% {
+        transform: translateY(-50%);
+    }
+    50% {
+        transform: translateY(50%);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes moveHorizontal {
+    0% {
+        transform: translateX(-50%) translateY(-10%);
+    }
+    50% {
+        transform: translateX(50%) translateY(10%);
+    }
+    100% {
+        transform: translateX(-50%) translateY(-10%);
+    }
+}
+
+.gradient-bg {
+    
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+    svg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .gradients-container {
+        filter: url(#goo) blur(40px);
+        width: 100%;
+        height: 100%;
+    }
+
+    .g1 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color1), 0.6) 0%, rgba(var(--color1), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(50% - var(--circle-size) / 2);
+        left: calc(50% - var(--circle-size) / 2);
+
+        transform-origin: center center;
+        animation: moveVertical 30s ease infinite;
+
+        opacity: 1;
+    }
+
+    .g2 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color2), 0.6) 0%, rgba(var(--color2), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(50% - var(--circle-size) / 2);
+        left: calc(50% - var(--circle-size) / 2);
+
+        transform-origin: calc(50% - 400px);
+        animation: moveInCircle 20s reverse infinite;
+
+        opacity: 0.8;
+    }
+
+    .g3 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color3), 0.6) 0%, rgba(var(--color3), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(50% - var(--circle-size) / 2 + 200px);
+        left: calc(50% - var(--circle-size) / 2 - 500px);
+
+        transform-origin: calc(50% + 400px);
+        animation: moveInCircle 40s linear infinite;
+
+        opacity: 0.7;
+    }
+
+    .g4 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color4), 0.6) 0%, rgba(var(--color4), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(50% - var(--circle-size) / 2);
+        left: calc(50% - var(--circle-size) / 2);
+
+        transform-origin: calc(50% - 200px);
+        animation: moveHorizontal 40s ease infinite;
+
+        opacity: 0.6;
+    }
+
+    .g5 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color5), 0.6) 0%, rgba(var(--color5), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+
+        width: calc(var(--circle-size) * 2);
+        height: calc(var(--circle-size) * 2);
+        top: calc(50% - var(--circle-size));
+        left: calc(50% - var(--circle-size));
+
+        transform-origin: calc(50% - 800px) calc(50% + 200px);
+        animation: moveInCircle 20s ease infinite;
+
+        opacity: 0.5;
+    }
+
+}

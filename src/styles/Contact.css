@@ -1,0 +1,198 @@
+/* Parent Container */
+.contact-parent {
+  padding: 1rem;
+}
+
+/* Semi-transparent gradient background with a cool glassy vibe */
+.semi-dark-bg {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 12, 51, 0.5) 0%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+  transition: all 0.3s ease;
+  padding: 1.5rem;
+}
+
+/* Thank You Message Container */
+.thank-you-message-container {
+  user-select: none;
+  background: linear-gradient(
+    135deg,
+    #001b4d 0%,  /* Deep Navy */
+    #111111f6 100%  /* Rich Black */
+  );
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6); */
+  transition: transform 0.4s ease, background 0.3s ease;
+  margin-top: 20px;
+}
+
+
+
+/* Make the thank you text pop with a bright glow effect */
+.thank-you-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  /* text-shadow: 0 4px 15px rgba(72, 118, 230, 0.5); */
+}
+
+/* Subtext with a pulsating glow animation */
+.thank-you-subtext {
+  font-size: 1.2rem;
+  color: #d6e1ff;
+  margin-top: 1rem;
+  animation: glow 2s infinite alternate;
+}
+
+
+/* Typed Heading */
+.typed-heading {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+/* Socials Container */
+.socials-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.8rem;
+}
+
+/* Glow and scaling effect on hover */
+.github-icon, .linkedin-icon {
+  /* border-radius: 100%; */
+  position: relative; /* Ensures proper stacking context */
+  display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.github-icon img, .linkedin-icon img {
+  display: block; /* Prevents any extra spacing around the image */
+  width: 45px; /* Adjust as necessary */
+  height: 45px; /* Adjust as necessary */
+  border-radius: 50%; /* Optional, for circular icons */
+  pointer-events: none; /* Ensure only the parent container reacts to hover */
+}
+
+.github-icon:hover, .linkedin-icon:hover {
+  transform: scale(1.2) rotate(5deg);
+  /* box-shadow: 0 5px 15px rgba(0, 144, 255, 0.5); Glow effect */
+  background-color: transparent; /* Fully transparent background */
+}
+
+/* Input & Textarea Styling */
+.dark-input {
+  background-color: rgba(12, 17, 34, 0.9);
+  color: #d6e1ff;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid rgba(192, 255, 238, 0.3);
+  padding: 1rem;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.dark-input:focus {
+  box-shadow: 0 0 8px rgba(192, 255, 238, 0.8);
+  border-color: rgba(192, 255, 238, 0.8);
+}
+
+/* Error Text and Border */
+.error-text {
+  color: #ff4a4a;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.error-border {
+  border: 2px solid #ff4a4a !important;
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* Send Button with Hover Effects */
+.send-button {
+  font-family: inherit;
+  font-size: 20px;
+  background: linear-gradient(135deg, rgba(0, 144, 255, 0.7), rgba(0, 0, 51, 0.8));
+  color: white;
+  padding: 0.7em 1em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 51, 0.4);
+}
+
+.send-button:hover {
+  background: linear-gradient(135deg, rgba(0, 200, 255, 0.9), rgba(0, 0, 102, 0.9));
+  box-shadow: 0 10px 30px rgba(0, 144, 255, 0.5);
+}
+
+.send-button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.send-button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.send-button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.send-button:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.send-button:hover span {
+  transform: translateX(2em);
+}
+
+.send-button:hover span {
+  transform: translateX(2em);
+}
+
+.send-button:active {
+  transform: scale(0.95);
+}
+
+/* Responsive Design */
+@media (max-width: 840px) {
+  .typed-heading {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .typed-heading {
+    font-size: 1rem;
+  }
+  .socials-container {
+    gap: 0.5rem;
+  }
+}

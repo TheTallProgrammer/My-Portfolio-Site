@@ -1,0 +1,228 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.local-navbar-container {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000; /* or something high */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 3rem;
+  z-index: 1000;
+  height: 45px;
+  font-family: 'Spline Sans', sans-serif; /* Apply Spline Sans font */
+  font-weight: 400; /* Semi-bold for emphasis */
+  letter-spacing: 1.5px;
+  user-select: none;
+  box-shadow:
+      0px 0px 20px rgba(71, 184, 255, 0.3),
+      0px 5px 5px -1px rgba(58, 125, 233, 0.15),
+      inset 4px 4px 8px rgba(175, 230, 255, 0.3),
+      inset -4px -4px 8px rgba(19, 95, 216, 0.31);
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.local-navbar-container:hover {
+  transform: translateX(-50%) scale(1.02); /* Slight enlargement on hover */
+}
+
+/* Keyframes for fade-in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+}
+
+
+.nav-links {
+  display: flex; 
+  gap: 3rem;
+  padding: 0;
+
+  transition: none;            /* We'll use keyframes instead of transition */
+}
+
+
+li a {
+  position: relative;
+  color: #e1e1e1;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+  text-decoration: none; /* Remove underline if needed */
+}
+
+li a:hover,
+li a:focus {
+  color: #fff;
+  text-shadow: 
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #fff,
+    0 0 80px #fff,
+    0 0 120px #fff,
+    0 0 160px #fff;
+  border-radius: 20%;
+}
+
+li a:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
+li a:hover:after,
+li a:focus:after {
+  width: 100%;
+  left: 0%;
+}
+
+.nav-links {
+  display: flex;
+  gap: 3rem;
+  padding: 0;
+}
+
+#menu-icon {
+  display: none; /* Only show in mobile media query */
+}
+
+/* Default nav-links hidden on mobile (as above) */
+
+
+/* Navbar Menu Styles */
+.icon-menu {
+  --gap: 5px;
+  --height-bar: 3.5px;
+  --pos-y-bar-one: 0;
+  --pos-y-bar-three: 0;
+  --scale-bar: 1;
+  --rotate-bar-one: 0;
+  --rotate-bar-three: 0;
+  width: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Each bar */
+.bar {
+  position: relative;
+  height: var(--height-bar);
+  width: 100%;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+}
+
+.bar--1 {
+  top: var(--pos-y-bar-one);
+  transform: rotate(var(--rotate-bar-one));
+  transition: top 200ms 100ms, transform 100ms;
+}
+
+.bar--2 {
+  transform: scaleX(var(--scale-bar));
+  transition: transform 150ms 100ms;
+}
+
+.bar--3 {
+  bottom: var(--pos-y-bar-three);
+  transform: rotate(var(--rotate-bar-three));
+  transition: bottom 200ms 100ms, transform 100ms;
+}
+
+/* Note the selector changes from .check-icon to #check-icon */
+#check-icon:checked + .icon-menu > .bar--1 {
+  transition: top 200ms, transform 200ms 100ms;
+}
+
+#check-icon:checked + .icon-menu > .bar--3 {
+  transition: bottom 200ms, transform 200ms 100ms;
+}
+
+#check-icon:checked + .icon-menu {
+  --pos-y-bar-one: calc(var(--gap) + var(--height-bar));
+  --pos-y-bar-three: calc(var(--gap) + var(--height-bar));
+  --scale-bar: 0;
+  --rotate-bar-one: 45deg;
+  --rotate-bar-three: -45deg;
+}  
+
+
+
+@media (max-width: 768px) {
+  /* Hide the nav links */
+  .nav-links {
+      display: none;
+
+  }
+
+  /* Show the menu icon */
+  #menu-icon {
+      display: block;
+      cursor: pointer; /* Let users know it’s clickable */
+  }
+
+  .local-navbar-container {
+      position: fixed;
+      /* Adjust your container if needed for smaller screens */
+      align-items: center;
+      width: 50%; 
+      left: 48.5%;
+      transform: translate(-50%);
+      padding: 0.5rem;
+      gap: 1rem;
+  }
+
+  .nav-links.active {
+      display: flex;            /* Or block */
+      font-weight: 600;
+      flex-direction: column;   /* Stack vertically */
+      background-color: rgba(0, 0, 0, 0.8); /* So it’s visible on top of whatever’s behind it */
+      border-radius: 5%;
+      position: absolute;
+      top: 60px;      /* Place it below your navbar container */
+      left: 0;        
+      right: 0;
+      gap: 2rem;      /* Spacing between menu items */
+      padding: 1rem 0;
+      text-align: center;
+      z-index: 999;   /* Make sure it’s above other stuff */
+        /* You already set a red background here—keep or remove as you wish */
+
+      /* This is the fade-in animation */
+      animation: fadeIn 0.3s ease-in-out forwards;
+  }
+  
+    
+} 

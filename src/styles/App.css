@@ -1,0 +1,201 @@
+/* =========================================
+   1. IMPORTS
+   ========================================= */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Meow+Script&family=Spline+Sans:wght@300;400;500;600;700&display=swap');
+
+
+/* =========================================
+   4. APP CONTAINER
+   ========================================= */
+
+/* Main app container settings */
+.app-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  /* overflow-x: hidden; Prevent unintended horizontal scrolling/ */
+}
+
+/* =========================================
+   6. BACKGROUND
+   ========================================= */
+
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none; /* Prevent it from blocking interactions */
+  overflow: hidden; /* Prevent accidental scroll conflicts */
+}
+
+/* =========================================
+   7. CONTENTS CONTAINER
+   ========================================= */
+
+.contents-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 90%; 
+  height: auto;             
+  margin-top: 0;            
+  z-index: 20;
+
+  opacity: 1; /* Ensure visibility as a fallback */
+  animation: fadeInDown 0.75s ease-out forwards; 
+}
+
+/* =========================================
+   8. PERSONAL TEXT SECTION
+   ========================================= */
+
+.personal-text-container {
+  z-index: 20;
+  width: 100%;
+  padding: 20px 0px;
+  text-align: center; 
+}
+
+/* -----------------------------------------
+   8.1. Title Container
+   ----------------------------------------- */
+
+.title-container {
+  margin-top: 100px;
+  color: #e0e0e0; 
+  font-family: 'Spline Sans', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.7);
+  line-height: 1.1;
+  text-decoration: none;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centers content vertically */
+  text-align: center; /* Ensures the text is centered within the container */
+  padding: 1rem; /* Adds some padding for spacing on smaller screens */
+  width: 100%; /* Makes sure the container spans full width */
+  max-width: 600px; /* Optional: Limits the width to prevent text from stretching too much on larger screens */
+}
+
+
+.about-container,
+.experience-section,
+.works-section,
+.contact-section {
+  min-height: 100vh; /* Ensure each section fills the viewport */
+  overflow-y: visible; /* Prevent scroll lock */
+  width: 100%;
+}
+
+.title-container h2 {
+  font-weight: 400; 
+  font-size: 2rem;
+}
+
+.title-container h1 {
+  font-size: 4rem;
+}
+
+.title-container h1, 
+.title-container h2 {
+  color: #e0e0e0;
+  text-shadow: none;
+  transition: text-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effect for h1 */
+.title-container h1:hover, .title-container h2:hover {
+  color: #fff;
+  text-shadow: 
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #fff,
+    0 0 80px #fff,
+    0 0 120px #fff,
+    0 0 160px #fff;
+}
+
+.contact-section {
+  z-index: 20;
+  width: 100%;
+}
+
+/* 
+   Container for the Resume download button 
+*/
+.button-container {
+  width: 300px;
+  margin: 20px 0; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scale: 1.1;
+  z-index: 20;
+  padding-bottom: 20px;
+}
+
+.about-container {
+  padding-top: 30px;
+  min-height: 100vh; /* Ensure proper height */
+  width: 100%;
+}
+
+/* =========================================
+   9. RESUME SECTION
+   ========================================= */
+
+.resume-container {
+  z-index: 20;
+  max-width: 800px;
+  margin-top: -75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scale: 0.85;
+}
+
+.resume-specific-container {
+  margin-right: 0px;
+  margin-bottom: 0;
+}
+
+.resume-container canvas {
+  width: 100%;
+  margin: -40px 0; 
+}
+
+@media (max-width: 2000px) {
+  .button-container {
+    margin-top: 75px;
+    padding-bottom: 0;
+    margin-bottom: -40px;
+    scale: 1.2;
+  }
+}
+
+@media (max-width: 930px) {
+
+  .resume-specific-container {
+    display: none;
+  }
+  .button-container {
+    margin-top: 100px;
+  }
+}
+
+

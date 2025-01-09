@@ -1,0 +1,161 @@
+#work-subtitle, #work-title {
+  user-select: none;
+}
+
+#work-title {
+  transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                text-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#work-title:hover {
+  color: #fff;
+  text-shadow: 
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #fff,
+    0 0 80px #fff,
+    0 0 120px #fff,
+    0 0 160px #fff;
+}
+
+.new-projects-container {
+  width: 100%;
+  /* This gradient will be animated using Framer Motion's backgroundPosition */
+
+  background-size: 400% 400%;
+  border-radius: 0.75rem;
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+/* Project Card Container */
+.new-project-card-wrapper {
+  padding: 15px, 15px, 0px, 15px;
+  position: relative;
+  width: 320px;
+  min-height: 420px;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #22222279;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  perspective: 1000px; /* allows 3D rotations */
+  cursor: default;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Subtle grayscale gradient or glow behind the card */
+.new-project-card-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.15),
+    transparent 60%
+  );
+  z-index: 1;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+/* Front Face */
+.new-project-front-face {
+  z-index: 2;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 230px;
+  position: relative;
+}
+
+/* Video */
+.new-project-video-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.new-project-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+/* GitHub Icon Container on top-right corner */
+.new-card-img-hover {
+  transition: transform 0.2s ease;
+}
+.new-card-img-hover:hover {
+  transform: scale(1.08);
+}
+
+/* GitHub Icon styling */
+.new-project-github {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(145deg, #2600ff, #333333);
+  border-radius: 9999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Project Info */
+.new-project-info {
+  z-index: 3;
+  padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Project Title with Faint Glow Effect */
+.new-project-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+
+
+.new-project-description {
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+/* Tag styling */
+.new-project-info {
+  position: relative; /* For absolute positioning of .new-project-tags-container */
+  padding-bottom: 3rem;
+  height: 100%;       /* Make sure this container has a defined height */
+}
+
+.new-project-tags-container {
+  padding-top: 500px;
+  position: absolute;
+  bottom: 1rem;       /* or however much spacing you want from the bottom */
+  left: 1rem;         /* if you want them aligned left; adjust as needed */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-weight: 600;
+  
+}
+
+.new-project-tag:hover {
+  scale: 1.05;
+}
