@@ -49,7 +49,7 @@ Feel free to clone or fork this repo to get it running on your own machine:
 ### **1. Clone the Repository**
 
 ```bash
-git clone https://github.com/username/repo-name.git
+git clone https://github.com/TheTallProgrammer/My-Portfolio-Site
 ```
 
 ### **2. Navigate to the Project Directory**
