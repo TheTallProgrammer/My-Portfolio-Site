@@ -1,6 +1,6 @@
 # ✨ Logan Falkenberg’s Portfolio Site 🌟
 
-👋 **Welcome!** Thanks for checking out my portfolio’s codebase! If you decide to use it, please reference the link back to this repo somewhere visible in your code or documentation. And hey—while you’re at it, drop me a follow on GitHub! Your support genuinely means a lot. 🙌
+👋 **Welcome!** Thanks for checking out my portfolio’s codebase! If you decide to use it, **please reference the link back to this repo somewhere visible in your code or documentation. And hey—while you’re at it, drop me a follow on GitHub!** Your support genuinely means a lot. 🙌
 
 ---
 
