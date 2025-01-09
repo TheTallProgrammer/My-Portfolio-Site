@@ -55,7 +55,7 @@ git clone https://github.com/TheTallProgrammer/My-Portfolio-Site
 ### **2. Navigate to the Project Directory**
 
 ```bash
-cd repo-name
+cd My-Portfolio-Site
 ```
 
 ### **3. Install Dependencies**
