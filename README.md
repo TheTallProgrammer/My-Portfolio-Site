@@ -4,6 +4,10 @@
 
 ---
 
+Here’s the updated **Tech Stack** section with a new bullet for GitKraken:
+
+---
+
 ## 🛠️ Tech Stack
 
 This project harnesses a range of modern tools and technologies:
@@ -32,7 +36,11 @@ This project harnesses a range of modern tools and technologies:
 8. **📧 Email.js**  
    Handles the contact form functionality, letting users shoot me an email directly from the site.
 
+9. **🛠️ GitKraken**  
+   For version control, I use GitKraken to push/pull the repo. It simplifies git interactions (compared to GitHub Desktop or CLI), especially for large projects like this. GitKraken handles challenges like **Git LFS** (Large File Storage) seamlessly, making it a highly recommended tool for managing version control efficiently.
+
 ---
+
 
 ## 🚀 Getting Started
 
